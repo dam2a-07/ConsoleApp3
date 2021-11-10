@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 namespace ConsoleAppPadre
 
@@ -79,7 +80,48 @@ namespace ConsoleAppPadre
 
                 Double calculo;
 
-                calculo = ConsoleAppHijo.Program.Operaciones(num1d, num2d, ope);
+
+
+                ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
+                startInfo.ArgumentList.Add(ope);
+                startInfo.ArgumentList.Add(num1s);
+                startInfo.ArgumentList.Add(num2s);
+                
+               //calculo = ConsoleAppHijo.Program.Operaciones(num1d, num2d, ope);
+
+
+
+
+
+
+                Process.Start(startInfo);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
                 String seg = Console.ReadLine();
