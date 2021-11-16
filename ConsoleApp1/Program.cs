@@ -80,47 +80,19 @@ namespace ConsoleAppPadre
 
                 Double calculo;
 
+                // C: \Users\DAM2A - 07\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\netcoreapp3.1
+                //
+                // ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
+                ProcessStartInfo startInfo = new ProcessStartInfo("C://Users//DAM2A-07//source//repos//ConsoleApp3//ConsoleApp3//bin//Debug//netcoreapp3.1//ConsoleAppHijo.exe");
 
-
-                ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
                 startInfo.ArgumentList.Add(ope);
                 startInfo.ArgumentList.Add(num1s);
                 startInfo.ArgumentList.Add(num2s);
-                
-               //calculo = ConsoleAppHijo.Program.Operaciones(num1d, num2d, ope);
 
-
-
-
-
+                //calculo = ConsoleAppHijo.Program.Operaciones(num1d, num2d, ope);
 
                 Process.Start(startInfo);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                
 
 
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
