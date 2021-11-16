@@ -83,17 +83,54 @@ namespace ConsoleAppPadre
                 // C: \Users\DAM2A - 07\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\netcoreapp3.1
                 //
                 // ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
-                ProcessStartInfo startInfo = new ProcessStartInfo("C://Users//DAM2A-07//source//repos//ConsoleApp3//ConsoleApp3//bin//Debug//netcoreapp3.1//ConsoleAppHijo.exe");
+                ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
+                //startInfo.Arguments = "s 5 4";
+                startInfo.RedirectStandardError = true;
+                startInfo.RedirectStandardOutput = true;
+
 
                 startInfo.ArgumentList.Add(ope);
                 startInfo.ArgumentList.Add(num1s);
                 startInfo.ArgumentList.Add(num2s);
 
+
+
                 //calculo = ConsoleAppHijo.Program.Operaciones(num1d, num2d, ope);
 
-                Process.Start(startInfo);
-                
+                var process = Process.Start(startInfo);
+                var errorReader = process.StandardError;
+                var outputwriter = process.StandardOutput;
 
+
+
+                process.WaitForExit();
+
+
+
+
+
+                if (process.ExitCode == 0)
+                {
+
+
+
+                    var salida = outputwriter.ReadToEnd();
+
+                    Console.WriteLine(salida);
+                    //Console.WriteLine("SALIDA" + process.ExitCode);
+
+                }
+                else
+                {
+                    var salidaerror = errorReader.ReadToEnd();
+
+                    Console.WriteLine(salidaerror);
+                    // Console.WriteLine("SALIDA"+process.ExitCode);
+                }
+
+
+
+                //   Console.WriteLine(process.StandardOutput);
 
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
                 String seg = Console.ReadLine();

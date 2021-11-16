@@ -2,6 +2,8 @@
 namespace ConsoleAppHijo
 {
     using System;
+    using System.Diagnostics;
+
     public class Program
     {
 
@@ -27,21 +29,22 @@ namespace ConsoleAppHijo
                     if (num2 == 0)
                     {
                         Console.WriteLine("Division entre 0");
-                        vuelve = Double.NaN;
+                        result = Double.NaN;
                     }
                     else { result = num1 / num2; }
                     break;
                 default:
                     Console.WriteLine("Introduce una operacion 's' 'r' 'm' 'd'");
-                    vuelve = Double.NaN;
+                    result = Double.NaN;
                     break;
             }
             Console.WriteLine("Resultado es: " + result);
-
+            vuelve = result;
             return vuelve;
         }
         static void Main(string[] args)
         {
+
             try
             {
                 string numeroarg1 = args[1];
@@ -70,6 +73,7 @@ namespace ConsoleAppHijo
                 }
 
                 result = Operaciones(numerocalc1, numerocalc2, op);
+
             }
             catch (Exception e)
             {
