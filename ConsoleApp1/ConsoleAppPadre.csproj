@@ -5,4 +5,28 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Include="..\ConsoleApp3\bin\Debug\netcoreapp3.1\ConsoleAppHijo.deps.json" Link="ConsoleAppHijo.deps.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ConsoleApp3\bin\Debug\netcoreapp3.1\ConsoleAppHijo.runtimeconfig.dev.json" Link="ConsoleAppHijo.runtimeconfig.dev.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\ConsoleApp3\bin\Debug\netcoreapp3.1\ConsoleAppHijo.dll" Link="ConsoleAppHijo.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="..\ConsoleApp3\bin\Debug\netcoreapp3.1\ConsoleAppHijo.exe" Link="ConsoleAppHijo.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ConsoleAppHijo.runtimeconfig.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
