@@ -78,13 +78,9 @@ namespace ConsoleAppPadre
                 }
                 num2d = Double.Parse(num2s);
 
-                Double calculo;
 
-                // C: \Users\DAM2A - 07\source\repos\ConsoleApp3\ConsoleApp3\bin\Debug\netcoreapp3.1
-                //
-                // ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
+
                 ProcessStartInfo startInfo = new ProcessStartInfo(".//ConsoleAppHijo.exe");
-                //startInfo.Arguments = "s 5 4";
                 startInfo.RedirectStandardError = true;
                 startInfo.RedirectStandardOutput = true;
 
@@ -116,21 +112,17 @@ namespace ConsoleAppPadre
 
                     var salida = outputwriter.ReadToEnd();
 
-                    Console.WriteLine(salida);
-                    //Console.WriteLine("SALIDA" + process.ExitCode);
+                    Console.WriteLine(salida+ "el proceso termina correctamente y devuelve:" + process.ExitCode);
 
                 }
                 else
                 {
                     var salidaerror = errorReader.ReadToEnd();
 
-                    Console.WriteLine(salidaerror);
-                    // Console.WriteLine("SALIDA"+process.ExitCode);
+                    Console.WriteLine("Se ha producido un error: " + salidaerror+ " el proceso devuelve:"+process.ExitCode);
                 }
 
 
-
-                //   Console.WriteLine(process.StandardOutput);
 
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
                 String seg = Console.ReadLine();
