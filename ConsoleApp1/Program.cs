@@ -114,6 +114,7 @@ namespace ConsoleAppPadre
                 }
 
 
+
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
                 String seg = Console.ReadLine();
                 if (seg.Equals("n") | seg.Equals("N"))
