@@ -97,31 +97,21 @@ namespace ConsoleAppPadre
                 var errorReader = process.StandardError;
                 var outputwriter = process.StandardOutput;
 
-
-
                 process.WaitForExit();
-
-
-
 
 
                 if (process.ExitCode == 0)
                 {
 
-
-
                     var salida = outputwriter.ReadToEnd();
-
-                    Console.WriteLine(salida+ "el proceso termina correctamente y devuelve:" + process.ExitCode);
+                    Console.WriteLine(salida + "el proceso termina correctamente y devuelve:" + process.ExitCode);
 
                 }
                 else
                 {
                     var salidaerror = errorReader.ReadToEnd();
-
-                    Console.WriteLine("Se ha producido un error: " + salidaerror+ " el proceso devuelve:"+process.ExitCode);
+                    Console.WriteLine("Se ha producido un error: " + salidaerror + " el proceso devuelve:" + process.ExitCode);
                 }
-
 
 
                 Console.WriteLine("¿Hacer otra operacion? 's' 'n'");
